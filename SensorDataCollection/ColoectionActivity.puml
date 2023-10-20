@@ -1,0 +1,51 @@
+@startuml
+class com.myapp.sensordatacollection.activities.CollectionActivity {
+- {static} String TAG
+- RadioGroup radioGroup1
+- RadioGroup radioGroup2
+- {static} int ID_NUMBER_MAX_LENGTH
+- RadioButton normalButton
+- RadioButton inputChangeButton
+- RadioButton walkingInputButton
+- Button saveButton
+- EditText editTextIdNumber
+- TextView idNumberCount
+- TextView collectState
+- SensorManager sensorManager
+- CheckBox agreeCheckbox
+- ConcurrentHashMap<Integer,Vector<Double>> sensorDataMap
+- {static} String[] PERMISSIONS_STORAGE
+- {static} int REQUEST_EXTERNAL_STORAGE
+- {static} int UPDATE_INTERVAL_TIME
+- StringBuilder sampleStringBuilder
+- StringBuilder stringBuilder
+- int fileTypeId
+~ Handler collectHandler
+~ Runnable runnable
+~ Boolean startCollect
+- int[] typeArray
+- String[] id2SensorName
+- {static} String csvHeader
+# void onCreate(Bundle)
++ {static} void checkStorageManagerPermission(Context)
++ {static} void verifyStoragePermissions(Activity)
+- void startCollectSensorData()
+- void stopCollectSensorData()
+- void collectCurrentTimeSensorData()
+- void setRadioButtonState(int)
+- void initGroupRadioButton()
+- void initView()
++ void onCheckedChanged(CompoundButton,boolean)
++ void onSensorChanged(SensorEvent)
++ void onAccuracyChanged(Sensor,int)
+- void toastMessage(CharSequence)
++ String getSaveFilePath()
+# void onDestroy()
++ boolean onKeyDown(int,KeyEvent)
+}
+
+
+com.myapp.sensordatacollection.activities.OnCheckedChangeListener <|.. com.myapp.sensordatacollection.activities.CollectionActivity
+android.hardware.SensorEventListener <|.. com.myapp.sensordatacollection.activities.CollectionActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.myapp.sensordatacollection.activities.CollectionActivity
+@enduml

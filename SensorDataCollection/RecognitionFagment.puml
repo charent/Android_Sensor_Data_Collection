@@ -1,0 +1,52 @@
+@startuml
+class com.myapp.sensordatacollection.ui.recognition.RecognitionFragment {
+- {static} String TAG
+- {static} String serverURL
+- {static} int ID_NUMBER_MAX_LENGTH
+- {static} String CACHE_FILE_TYPE
+- {static} int MAX_COLLECT_LINE
+- int collectedLine
+- {static} int STATUS_OK
+- RecognitionViewModel notificationsViewModel
+- FragmentRecognitionBinding binding
+- Button uploadButton
+- EditText editTextIdNumber
+- TextView idNumberCount
+- TextView collectState
+- SensorManager sensorManager
+- {static} int UPDATE_INTERVAL_TIME
+- StringBuilder stringBuilder
+~ Handler collectHandler
+~ Runnable runnable
+~ Boolean startCollect
+- int[] typeArray
+- String[] id2SensorName
+- ConcurrentHashMap<Integer,Vector<Double>> sensorDataMap
+- HttpUtils httpUtils
+- List<String> cacheFileList
+- TextView inputAttitude
+- {static} Handler handler
+- HomeViewModel homeViewModel
+- Properties properties
+- StringBuilder sampleStringBuilder
+- CheckBox agreeCheckBox
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void initServerURL()
+- void postJson(String)
+- void postCSVFile(File)
+- void initView()
+- void saveCsvFileToCache(String,String)
+- void startCollectSensorData()
+- void stopCollectSensorData()
+- void collectCurrentTimeSensorData()
++ void onSensorChanged(SensorEvent)
++ void onAccuracyChanged(Sensor,int)
+- void toastMessage(CharSequence)
++ void onDestroyView()
++ void onResume()
+}
+
+
+android.hardware.SensorEventListener <|.. com.myapp.sensordatacollection.ui.recognition.RecognitionFragment
+androidx.fragment.app.Fragment <|-- com.myapp.sensordatacollection.ui.recognition.RecognitionFragment
+@enduml
