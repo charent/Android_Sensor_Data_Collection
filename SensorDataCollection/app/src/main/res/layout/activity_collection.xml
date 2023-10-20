@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="71dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="@string/uname" />
+
+                <EditText
+                    android:id="@+id/editTextTextUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="10"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="@string/id_number" />
+
+                <EditText
+                    android:id="@+id/cardNumberEditText"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789Xx"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="18"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/idNumberCount"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="10" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="73dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="@string/phone" />
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="11"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/agreeCheckBox"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/agree" />
+
+                <TextView
+                    android:id="@+id/collectState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="未开始采集" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="-197dp"
+            tools:layout_editor_absoluteY="516dp">
+
+            <Button
+                android:id="@+id/uploadButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="输入完成，保存数据" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="invisible" />
+
+            <RadioGroup
+
+                android:id="@+id/checkGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:id="@+id/normalButton"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="正常输入（单手、双手、换手等）" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+
+                android:id="@+id/checkGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:id="@+id/inputChangeButton"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="输入中换人" />
+
+                <RadioButton
+
+                    android:id="@+id/walkingInputButton"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="行走输入（不换人）" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:text="@string/tips" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+@startuml
+class com.myapp.sensordatacollection.MainActivity {
+- {static} String TAG
++ {static} String PROPERTIES_FILE_NAME
+- ActivityMainBinding binding
+- int settingRequestCode
+- Properties properties
+- NavController navController
+- HomeViewModel homeViewModel
+# void onCreate(Bundle)
+- void initView()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ void onActivityResult(int,int,Intent)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.myapp.sensordatacollection.MainActivity
+@enduml

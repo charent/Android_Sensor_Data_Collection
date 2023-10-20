@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<network-security-config>
+
+    <base-config cleartextTrafficPermitted="true" />
+
+    <domain-config>
+        <domain includeSubdomains="true">0.0.0.0</domain>
+        <domain includeSubdomains="true">101.201.69.205</domain>
+
+        <trust-anchors>
+            <certificates src="@raw/cert"/>
+        </trust-anchors>
+    </domain-config>
+
+</network-security-config>

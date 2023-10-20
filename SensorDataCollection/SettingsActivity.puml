@@ -1,0 +1,31 @@
+@startuml
+class com.myapp.sensordatacollection.activities.SettingActivity {
+- {static} String TAG
+- boolean isSettingChange
+- Properties properties
+- String properties_file_name
+- EditText sampleTimeEditText
+- TextView sampleHzTextView
+- RadioButton mainServerRadioButton
+- RadioButton selfServerRadioButton
+- EditText serverIPEditText
+- EditText serverPortEditText
+- EditText serverFunction
+- Button saveButton
+- Button saveQuitButton
+- int default_server
+# void onCreate(Bundle)
+- void initView()
+- boolean checkProperties()
+- void setReadSampleTimeEditText()
+- void updateServerEditText(String,String,String)
+- void setServerEditTextEnable(boolean)
++ void onCheckedChanged(CompoundButton,boolean)
++ boolean onKeyDown(int,KeyEvent)
+# void onDestroy()
+}
+
+
+com.myapp.sensordatacollection.activities.OnCheckedChangeListener <|.. com.myapp.sensordatacollection.activities.SettingActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.myapp.sensordatacollection.activities.SettingActivity
+@enduml

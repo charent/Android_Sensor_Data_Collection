@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">输入姿态识别</string>
+    <string name="title_home">数据采集</string>
+    <string name="title_dashboard">已收集数据</string>
+    <string name="title_recognition">识别</string>
+    <string name="title_setting">设置</string>
+    <string name="id_number">xxx号：</string>
+    <string name="uname">姓名：</string>
+    <string name="phone">手机号：</string>
+    <string name="agree">同意调用手机传感器收集数据</string>
+    <string name="tips">正常样本：一个人单手、双手、左右手交换等姿态正常输入xxx号，保存。\n异常样本：输入xxx的前、中、后将手机交给另一个人，第二个人输入完成后点击保存。\n行走输入：输入xxx号时人在行走，可以单、双、左右手更换等，最好保存。\n</string>
+    <string name="positive">正常样本</string>
+    <string name="negative">异常样本</string>
+    <string name="save">输入完成，保存数据</string>
+    <string name="about">关于</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+
+</resources>
